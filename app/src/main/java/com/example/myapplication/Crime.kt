@@ -19,7 +19,7 @@ import java.util.*
          (UUID.randomUUID())
      }
 
-     fun isRequiresPolice(): Boolean {
+     fun RequiresPolice(): Boolean {
          return mRequiresPolice
      }
 
