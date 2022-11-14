@@ -31,7 +31,7 @@ class CrimeFragment :Fragment() {
         titleField =view.findViewById(R.id.crime_title) as EditText
         dateButton = view.findViewById(R.id.crime_date) as Button
         dateButton.apply {
-            text = crime.getDate().toString()
+            text = crime.Date.toString()
             isEnabled = false
         }
         solvedCheckBox = view.findViewById(R.id.crime_solved) as CheckBox
@@ -55,7 +55,7 @@ class CrimeFragment :Fragment() {
                 start: Int,
                 count: Int,
                 after: Int) {
-               crime.setTitle(senquence.toString())
+               crime.Title= senquence.toString()
             }
 
             override fun afterTextChanged(senquence: Editable?) {
@@ -66,7 +66,7 @@ class CrimeFragment :Fragment() {
         titleField.addTextChangedListener(titleWatcher)
         solvedCheckBox.apply {
             setOnCheckedChangeListener {_, isChecked ->
-                crime.setSolved(isChecked)
+                crime.isSolved = isChecked
             }
         }
     }

@@ -1,13 +1,14 @@
 package com.example.myapplication
 
 import androidx.lifecycle.ViewModel
+import com.example.myapplication.database.CrimeRepository
 import java.util.*
 
 class CrimeListViewModel : ViewModel() {
 
-    val crimes = mutableListOf<Crime>()
+    //val crimes = mutableListOf<Crime>()
 
-    init {
+  /*  init {
         for (i in 0 until 100) {
           val crime = Crime()
             crime.setTitle("Crime #$i")
@@ -18,5 +19,9 @@ class CrimeListViewModel : ViewModel() {
         }
 
 
-    }
+    }*/
+
+  private val crimeRepository = CrimeRepository.get()
+  val crimeListLiveData =crimeRepository.getCrimes()
+
 }

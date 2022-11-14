@@ -1,16 +1,13 @@
 package com.example.myapplication
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.*
-
- class Crime {
-     private var mId: UUID? = null
-     private var mTitle: String? = null
-     private var mDate: Date? = null
-     private var mSolved = false
-     private var mRequiresPolice = false
-     private var mSuspect: String? = null
-
-     fun Crime(id: UUID?) {
+@Entity
+data class Crime(@PrimaryKey val id :UUID = UUID.randomUUID(),  var Title: String? = null,
+                 var Date: Date = Date(), var isSolved: Boolean = false, var RequiresPolice : Boolean = false,var suspect :String = " "
+    ){
+/*     fun Crime(id: UUID?) {
          mId = id
          mDate = Date()
      }
@@ -27,7 +24,7 @@ import java.util.*
          mRequiresPolice = mReqPolice
      }
 
-     fun getId(): UUID? {
+    fun getMId(): UUID? {
          return mId
      }
 
@@ -72,6 +69,6 @@ import java.util.*
      }
 
      fun getPhotoFilename(): String? {
-         return "IMG" + getId().toString() + ".jpg"
-     }
+         return "IMG" + getMId().toString() + ".jpg"
+     }*/
 }
